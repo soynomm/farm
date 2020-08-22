@@ -1,0 +1,25 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "Ink",
+        "repositoryURL": "https://github.com/johnsundell/ink.git",
+        "state": {
+          "branch": null,
+          "revision": "bd223a2482449507bd3286cb262c962d32d81e4b",
+          "version": "0.5.0"
+        }
+      },
+      {
+        "package": "Yams",
+        "repositoryURL": "https://github.com/jpsim/Yams.git",
+        "state": {
+          "branch": null,
+          "revision": "88caa2e6fffdbef2e91c2022d038576062042907",
+          "version": "4.0.0"
+        }
+      }
+    ]
+  },
+  "version": 1
+}
