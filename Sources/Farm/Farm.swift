@@ -60,8 +60,8 @@ public struct Farm {
     /**
      * Parses the files found with `getFiles()` and turns them into actual content.
      */
-    private func parseFiles(files: [String]) -> [StaticContentItem] {
-        var items: [StaticContentItem] = []
+    private func parseFiles(files: [String]) -> [FarmItem] {
+        var items: [FarmItem] = []
         
         for file in files {
             let fileContent = try? String(contentsOfFile: self.directory + file, encoding: String.Encoding.utf8)
@@ -107,7 +107,7 @@ public struct Farm {
                         }
                         
                         // Let's add this juicy result to `items`
-                        items.append(StaticContentItem.init(meta: metadata, entry: contentEntry))
+                        items.append(FarmItem.init(meta: metadata, entry: contentEntry))
                     }
                 }
             }
@@ -119,7 +119,7 @@ public struct Farm {
     /**
      * Sorts content by meta key, in descending order.
      */
-    private func sortContentByKeyDesc(key: String, files: [StaticContentItem]) -> [StaticContentItem] {
+    private func sortContentByKeyDesc(key: String, files: [FarmItem]) -> [FarmItem] {
         return files.sorted(by: { (x, y) in
             return x.meta[key] ?? "" > y.meta[key] ?? ""
         })
@@ -128,7 +128,7 @@ public struct Farm {
     /**
      * Sorts content by meta key, in ascending order.
      */
-    private func sortContentByKeyAsc(key: String, files: [StaticContentItem]) -> [StaticContentItem] {
+    private func sortContentByKeyAsc(key: String, files: [FarmItem]) -> [FarmItem] {
         return files.sorted(by: { (x, y) in
             return x.meta[key] ?? "" < y.meta[key] ?? ""
         })
@@ -137,7 +137,7 @@ public struct Farm {
     /**
      * Get all items from the `self.directory`, potentially in a sorted fashion.
      */
-    public func getAll() -> [StaticContentItem] {
+    public func getAll() -> [FarmItem] {
         let files = self.getFiles()
         let parsedFiles = self.parseFiles(files: files)
         
@@ -161,7 +161,7 @@ public struct Farm {
     /**
      * Get one item from `self.directory`, according to a key-value pair that matches.
      */
-    public func get(key: String, value: String) -> StaticContentItem? {
+    public func get(key: String, value: String) -> FarmItem? {
         let files = self.getFiles()
         let parsedFiles = self.parseFiles(files: files)
         
