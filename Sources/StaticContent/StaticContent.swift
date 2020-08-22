@@ -13,7 +13,7 @@ public struct StaticContent {
     var order: String = ""
     var fileExtension: String = "md"
 
-    init(directory: String, orderBy: String = "", order: String = "", fileExtension: String = "") {
+    public init(directory: String, orderBy: String = "", order: String = "", fileExtension: String = "") {
         // Set the directory we'll be getting the content from.
         // We'll also add a trailing slash in case the user forgot to add one.
         if(directory.suffix(1) != "/") {
