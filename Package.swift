@@ -4,11 +4,11 @@
 import PackageDescription
 
 let package = Package(
-    name: "StaticContent",
+    name: "Farm",
     products: [
         .library(
-            name: "StaticContent",
-            targets: ["StaticContent"]),
+            name: "Farm",
+            targets: ["Farm"]),
     ],
     dependencies: [
         .package(name: "Ink", url: "https://github.com/johnsundell/ink.git", from: "0.5.0"),
@@ -16,13 +16,13 @@ let package = Package(
     ],
     targets: [
         .target(
-            name: "StaticContent",
+            name: "Farm",
             dependencies: [
                 "Ink",
                 "Yams"
             ]),
         .testTarget(
-            name: "StaticContentTests",
-            dependencies: ["StaticContent"]),
+            name: "FarmTests",
+            dependencies: ["Farm"]),
     ]
 )

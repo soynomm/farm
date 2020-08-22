@@ -2,12 +2,12 @@ import Foundation
 import Yams
 import Ink
 
-public struct StaticContentItem: Codable {
+public struct FarmItem: Codable {
     public var meta: [String: String]
     public var entry: String
 }
 
-public struct StaticContent {
+public struct Farm {
     var directory: String = ""
     var orderBy: String = ""
     var order: String = ""
