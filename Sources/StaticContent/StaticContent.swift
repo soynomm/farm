@@ -92,9 +92,13 @@ public struct StaticContent {
                                         dateFormatter.dateFormat = "yyyy-MM-dd"
                                         metadata[yamlDataItem.key] = dateFormatter.string(from: date!)
                                         
-                                        let relativeDateFormatter = RelativeDateTimeFormatter()
-                                        relativeDateFormatter.unitsStyle = .full
-                                        metadata["relativeDate"] = relativeDateFormatter.localizedString(for: date!, relativeTo: Date())
+                                        if #available(macOS 10.15, *) {
+                                            let relativeDateFormatter = RelativeDateTimeFormatter()
+                                            relativeDateFormatter.unitsStyle = .full
+                                            metadata["relativeDate"] = relativeDateFormatter.localizedString(for: date!, relativeTo: Date())
+                                        } else {
+                                            metadata["relativeDate"] = "Relative date requires macOS 10.15 or later"
+                                        }
                                     }
                                 } else {
                                     metadata[yamlDataItem.key] = yamlDataItem.value as? String
