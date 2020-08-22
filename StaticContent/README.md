@@ -1,3 +1,3 @@
 # StaticContent
 
-A description of this package.
+tl;dr
