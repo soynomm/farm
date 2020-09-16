@@ -165,12 +165,8 @@ public struct Farm {
         let files = self.getFiles()
         let parsedFiles = self.parseFiles(files: files)
         
-        for parsedFile in parsedFiles {
-            if parsedFile.meta[key] != nil && parsedFile.meta[key] == value {
-                return parsedFile
-            }
-        }
-        
-        return nil
+        return parsedFiles.filter {
+            $0.meta[key] != nil && $0.meta[key] == value
+        }[0]
     }
 }
