@@ -4,7 +4,7 @@
 
 ### Example content file
 
-All of the content files in **Farm** are Markdown files. That means they have a file name of `example.md`. They can be in any directory you want (you can specify it) and they contain YAML metadata. An example of a Farm file is the following (probably a familiar format if you've used Jekyll before):
+The content files in **Farm** are Markdown files. That means they have a file name of `example.md`. They can be in any directory you want (you can specify it) and they contain YAML metadata. An example of a Farm file is the following (probably a familiar format if you've used Jekyll before):
 
 ```
 ---
